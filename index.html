@@ -129,7 +129,8 @@
                 <span class="window-title">allo-reservation-system.vercel.app</span>
               </div>
               <div class="window-content hero-project-preview">
-                <img src="assets/port.png" alt="Allo Reservation System – Live Project Preview" class="hero-project-img" loading="eager" />
+                <img src="assets/port.png" alt="Allo Reservation System – Live Project Preview" class="hero-project-img"
+                  loading="eager" />
               </div>
             </div>
 
@@ -603,8 +604,107 @@
             </div>
           </div>
 
-          <!-- Contact Form Column -->
-         
+          <div class="contact-form-column reveal delay-2">
+            <div class="contact-form-wrapper shadow-md">
+              <h3 class="form-title">Launch Your Project</h3>
+              <p class="form-subtitle">Fill out the form below and receive a detailed website proposal.</p>
+
+              <form id="contact-form" novalidate>
+                <div class="form-row">
+                  <!-- Name Input -->
+                  <div class="form-group">
+                    <label for="form-name" class="form-label">Full Name</label>
+                    <input type="text" id="form-name" class="form-input" placeholder="e.g. John Doe" required>
+                    <span class="error-message" id="error-name">Please enter your name</span>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <!-- Email Input -->
+                  <div class="form-group">
+                    <label for="form-email" class="form-label">Email Address</label>
+                    <input type="email" id="form-email" class="form-input" placeholder="e.g. john@yourcompany.com"
+                      required>
+                    <span class="error-message" id="error-email">Please enter a valid email address</span>
+                  </div>
+                </div>
+
+                <div class="form-row grid-form-2">
+                  <!-- Services Dropdown -->
+                  <div class="form-group">
+                    <label for="form-service" class="form-label">Project Type</label>
+                    <div class="select-wrapper">
+                      <select id="form-service" class="form-input" required>
+                        <option value="" disabled selected>Select service</option>
+                        <option value="portfolio">Portfolio Website</option>
+                        <option value="business">Business Website</option>
+                        <option value="booking">Booking System</option>
+                        <option value="other">Other Inquiry</option>
+                      </select>
+                    </div>
+                    <span class="error-message" id="error-service">Please select a service type</span>
+                  </div>
+
+                  <!-- Budget Dropdown -->
+                  <div class="form-group">
+                    <label for="form-budget" class="form-label">Estimated Budget</label>
+                    <div class="select-wrapper">
+                      <select id="form-budget" class="form-input" required>
+                        <option value="" disabled selected>Select budget</option>
+                        <option value="under-1k">Under RS.1,000</option>
+                        <option value="1k-2k">1,000 – 2,000</option>
+                        <option value="2k-5k">2,000 –5,000</option>
+                        <option value="5k-plus">5,000+</option>
+                      </select>
+                    </div>
+                    <span class="error-message" id="error-budget">Please select a budget range</span>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <!-- Message Textarea -->
+                  <div class="form-group">
+                    <label for="form-message" class="form-label">Project Description</label>
+                    <textarea id="form-message" class="form-input form-textarea"
+                      placeholder="Tell me a bit about your business, the goals of the website, or any reference sites you like..."
+                      required></textarea>
+                    <span class="error-message" id="error-message-field">Please describe your project</span>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full-width" id="form-submit-btn">
+                  <span>Send Message</span>
+                  <svg class="icon-small" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                  </svg>
+                </button>
+              </form>
+
+              <!-- Form Feedback States (Hidden by Default) -->
+              <div class="form-feedback-overlay" id="form-status" aria-live="polite">
+                <!-- Spinner State -->
+                <div class="feedback-state" id="state-sending">
+                  <div class="spinner"></div>
+                  <h4>Sending Inquiry...</h4>
+                  <p>Securing connection & establishing milestones.</p>
+                </div>
+                <!-- Success State -->
+                <div class="feedback-state" id="state-success">
+                  <div class="success-checkmark-wrapper">
+                    <svg class="success-checkmark" viewBox="0 0 52 52">
+                      <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                      <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                    </svg>
+                  </div>
+                  <h4>Inquiry Received!</h4>
+                  <p>Thank you for reaching out. Gurrampati Lara will review your requirements and respond via email
+                    within 24 business hours.</p>
+                  <button type="button" class="btn btn-secondary btn-sm" id="btn-reset-form">Send Another
+                    Message</button>
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>
