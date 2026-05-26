@@ -264,10 +264,25 @@ document.addEventListener('DOMContentLoaded', () => {
     stateSuccess.classList.remove('active-state');
     
     // Step 1: Simulate network sending (2 seconds)
-    setTimeout(() => {
-      stateSending.classList.remove('active-state');
-      stateSuccess.classList.add('active-state');
-    }, 2000);
+   fetch('/api/contact', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    name: fields.name.input.value,
+    email: fields.email.input.value,
+    message: fields.message.input.value
+  })
+})
+.then(res => res.json())
+.then(data => {
+  stateSending.classList.remove('active-state');
+  stateSuccess.classList.add('active-state');
+})
+.catch(() => {
+  alert('Error sending message');
+});
   });
   
   // Reset form handler
